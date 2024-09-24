@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playwright", "Playwright.csproj", "{FD472BA9-093F-4579-8BAC-703E47417BFC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium", "..\Selenium\Selenium.csproj", "{C0E53091-3CDD-4C96-9666-3BB969CD346E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playwright", "Playwright.csproj", "{FD472BA9-093F-4579-8BAC-703E47417BFC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F2790541-8712-47C6-929B-15505B8F9284}"
 	ProjectSection(SolutionItems) = preProject
@@ -22,10 +20,6 @@ Global
 		{FD472BA9-093F-4579-8BAC-703E47417BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD472BA9-093F-4579-8BAC-703E47417BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD472BA9-093F-4579-8BAC-703E47417BFC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C0E53091-3CDD-4C96-9666-3BB969CD346E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0E53091-3CDD-4C96-9666-3BB969CD346E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0E53091-3CDD-4C96-9666-3BB969CD346E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0E53091-3CDD-4C96-9666-3BB969CD346E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
