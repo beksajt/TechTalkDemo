@@ -17,7 +17,6 @@
     <ExpectTimeout>5000</ExpectTimeout>
     <LaunchOptions>
       <Headless>false</Headless>
-      <Channel>firefox</Channel>
     </LaunchOptions>
   </Playwright>
 </RunSettings>
