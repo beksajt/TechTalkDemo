@@ -11,7 +11,7 @@ internal abstract class BasePage
         Page.RouteAsync(new Regex("https://googleads"), route => route.AbortAsync());
     }
 
-    protected static string BaseURL => "https://practice.expandtesting.com/"; 
+    protected static string BaseURL => "https://practice.expandtesting.com/";
     public ILocatorAssertions Expect(ILocator locator) => Assertions.Expect(locator);
     public IPageAssertions Expect(IPage page) => Assertions.Expect(page);
 

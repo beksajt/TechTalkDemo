@@ -36,6 +36,6 @@ public class BookingSummarySection
     public async Task<double> TotalEUR()
     {
         var textContent = await SummaryTotalEURText.TextContentAsync();
-        return Double.Parse(textContent.Split(":")[1].Trim(), NumberStyles.Currency, CultureInfo.CreateSpecificCulture("en-IE"));
+        return double.Parse(textContent.Split(":")[1].Trim(), NumberStyles.Currency, CultureInfo.CreateSpecificCulture("en-IE"));
     }
 }

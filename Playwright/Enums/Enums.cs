@@ -8,3 +8,15 @@ public enum ParkingLot
     LongTermSurface,
     Economy
 }
+
+public enum PaymentMethod
+{
+    cashondelivery,
+    card
+}
+
+public enum VehicleSize
+{
+    small,
+    medium
+}

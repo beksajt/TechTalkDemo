@@ -53,9 +53,9 @@ internal class WebParkingPage : BasePage
     {
         var resultText = await ResultValueText.TextContentAsync();
 
-        if (Double.TryParse(resultText, 
-                NumberStyles.Currency, 
-                CultureInfo.CreateSpecificCulture("en-IE"), 
+        if (double.TryParse(resultText,
+                NumberStyles.Currency,
+                CultureInfo.CreateSpecificCulture("en-IE"),
                 out var result))
             return result;
 
@@ -69,10 +69,10 @@ internal class WebParkingPage : BasePage
         if (string.IsNullOrEmpty(resultText))
             throw new Exception("Unable to parse duration");
 
-        var matches = new Regex("\\d+").Matches(resultText);
-        var days = TimeSpan.FromDays(Int32.Parse(matches[0].Value));
-        var hours = TimeSpan.FromHours(Int32.Parse(matches[1].Value));
-        var minutes = TimeSpan.FromMinutes(Int32.Parse(matches[2].Value));
+        var matches = new Regex("\d+").Matches(resultText);
+        var days = TimeSpan.FromDays(int.Parse(matches[0].Value));
+        var hours = TimeSpan.FromHours(int.Parse(matches[1].Value));
+        var minutes = TimeSpan.FromMinutes(int.Parse(matches[2].Value));
 
         return new TimeSpan().Add(days).Add(hours).Add(minutes);
     }

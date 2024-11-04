@@ -1,6 +1,4 @@
-using System.Linq;
-
-namespace Playwright.Tests;
+namespace Playwright;
 
 public class UITests : PageTest
 {

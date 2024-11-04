@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Playwright.Pages;
+﻿namespace Playwright.Pages;
 
 internal class FormValidationPage : BasePage
 {
