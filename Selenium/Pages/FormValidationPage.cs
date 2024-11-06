@@ -1,4 +1,7 @@
-﻿namespace Selenium.Pages
+﻿using OpenQA.Selenium.Interactions;
+using System.Xml.Linq;
+
+namespace Selenium.Pages
 {
     internal class FormValidationPage : BasePage
     {
@@ -16,21 +19,27 @@
 
         public void FillContactName(string contactName)
         {
-            ContactNameInput.Clear(); // Clear any existing text before filling
+            ContactNameInput.Clear();
             ContactNameInput.SendKeys(contactName);
         }
 
         public void FillContactNumber(string contactNumber)
         {
-            ContactNumberInput.Clear(); // Clear any existing text before filling
+            ContactNumberInput.Clear();
             ContactNumberInput.SendKeys(contactNumber);
         }
 
         public void FillPickupDate(DateTime pickupDate)
         {
-            PickupDateInput.Click(); // Click the input field to focus
-            PickupDateInput.Clear(); // Clear any existing text before filling
-            PickupDateInput.SendKeys(pickupDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
+            PickupDateInput.Click(); 
+            PickupDateInput.Clear(); 
+            PickupDateInput.SendKeys(pickupDate.ToString("dd", CultureInfo.InvariantCulture));
+            PickupDateInput.SendKeys(pickupDate.ToString("MMM", CultureInfo.InvariantCulture));
+            Actions actions = new Actions(Driver);
+            actions.SendKeys(PickupDateInput, Keys.Tab).Perform();
+            actions.SendKeys(PickupDateInput, Keys.Enter).Perform();
+            //actions.SendKeys(PickupDateInput, Keys.Enter).Perform();
+            PickupDateInput.SendKeys(pickupDate.ToString("yyyy", CultureInfo.InvariantCulture));
         }
 
         public void SelectPaymentMethod(PaymentMethod paymentMethod)

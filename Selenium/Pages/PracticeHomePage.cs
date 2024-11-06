@@ -14,11 +14,12 @@ namespace Selenium.Pages
 
         public FormValidationPage GoToFormValidationPage()
         {
-            FormValidation.Click();
+            Actions actions = new Actions(Driver);
+            actions.MoveToElement(FormValidation).Click().Perform();
+            //FormValidation.Click();
             return new FormValidationPage(Driver);
         }
 
-        // Navigate to WebParkingPage
         public WebParkingPage GoToWebParkingPage()
         {
             Actions actions = new Actions(Driver);

@@ -28,22 +28,16 @@ namespace Selenium.Pages
 
         public void SetEntryDateTime(DateTime dateTime)
         {
-            EntryDate.Click();
             EntryDate.Clear();
             EntryDate.SendKeys(dateTime.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
-
-            EntryTime.Click();
             EntryTime.Clear();
             EntryTime.SendKeys(dateTime.ToString("HH:mm", CultureInfo.InvariantCulture));
         }
 
         public void SetExitDateTime(DateTime dateTime)
         {
-            ExitDate.Click();
             ExitDate.Clear();
             ExitDate.SendKeys(dateTime.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
-
-            ExitTime.Click();
             ExitTime.Clear();
             ExitTime.SendKeys(dateTime.ToString("HH:mm", CultureInfo.InvariantCulture));
         }

@@ -11,14 +11,14 @@
 
         private IWebElement BookingSummaryList => _driver.FindElement(By.CssSelector("#reservationDetails"));
 
-        private IWebElement SummaryParkingLotText => GetSummaryElement("Parking: ");
-        private IWebElement SummaryCheckInText => GetSummaryElement("Check In: ");
-        private IWebElement SummaryCheckOutText => GetSummaryElement("Check Out: ");
-        private IWebElement SummaryTotalEURText => GetSummaryElement("Total (EUR): ");
+        private IWebElement SummaryParkingLotText => GetSummaryElement("Parking:");
+        private IWebElement SummaryCheckInText => GetSummaryElement("Check In:");
+        private IWebElement SummaryCheckOutText => GetSummaryElement("Check Out:");
+        private IWebElement SummaryTotalEURText => GetSummaryElement("Total (EUR):");
 
         private IWebElement GetSummaryElement(string labelText)
         {
-            return BookingSummaryList.FindElement(By.XPath($".//li[contains(text(), '{labelText}')]"));
+            return BookingSummaryList.FindElement(By.XPath($"//li[contains(., '{labelText}')]"));
         }
 
         public ParkingLot ParkingLot()
