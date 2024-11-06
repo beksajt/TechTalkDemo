@@ -1,4 +1,6 @@
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
 
 namespace Selenium
 {
@@ -44,7 +46,10 @@ namespace Selenium
             // Arrange 1 - calculate
             var parkingLot = ParkingLot.ShortTerm;
             var parkingStartTime = DateTime.Now;
-            var parkingDuration = new TimeSpan().Add(TimeSpan.FromDays(3)).Add(TimeSpan.FromHours(7)).Add(TimeSpan.FromMinutes(14));
+            var parkingDuration = new TimeSpan()
+                .Add(TimeSpan.FromDays(3))
+                .Add(TimeSpan.FromHours(7))
+                .Add(TimeSpan.FromMinutes(14));
             var expectedPrice = 96.0;
             var homePage = new PracticeHomePage(Driver);
             homePage.Open();
@@ -138,8 +143,9 @@ namespace Selenium
         private IWebDriver CreateWebDriver()
         {
             ChromeOptions options = new ChromeOptions();
-            options.AddArgument(@"load-extension=ddkjiahejlhfcafbddmgiahcphecmpfh\2024.10.28.929_0\");
+            options.AddArgument("--start-maximized");
             ChromeDriver driver = new ChromeDriver(options);
+            
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             return driver;
         }

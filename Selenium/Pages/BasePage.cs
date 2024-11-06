@@ -11,9 +11,6 @@ internal abstract class BasePage
     {
         Driver = driver;
         Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-
-        // Optionally, if you want to block certain requests (like Google Ads), 
-        // you would need to set this up with a proxy or network management tool outside Selenium.
     }
 
     protected static string BaseURL => "https://practice.expandtesting.com/";

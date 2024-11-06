@@ -1,4 +1,6 @@
-﻿namespace Playwright.Pages;
+﻿using System.Threading;
+
+namespace Playwright.Pages;
 
 internal class WebParkingPage : BasePage
 {
@@ -24,18 +26,20 @@ internal class WebParkingPage : BasePage
 
     public async Task SetEntryDateTime(DateTime dateTime)
     {
-        await EntryDate.ClickAsync();
+        await EntryDate.ClearAsync();
+        await EntryTime.ClearAsync();
         await EntryDate.FillAsync(dateTime.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
-        await EntryTime.ClickAsync();
         await EntryTime.FillAsync(dateTime.ToString("HH:mm", CultureInfo.InvariantCulture));
+        Thread.Sleep(100);
     }
 
     public async Task SetExitDateTime(DateTime dateTime)
     {
-        await ExitDate.ClickAsync();
+        await ExitDate.ClearAsync();
+        await ExitTime.ClearAsync();
         await ExitDate.FillAsync(dateTime.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
-        await ExitTime.ClickAsync();
         await ExitTime.FillAsync(dateTime.ToString("HH:mm", CultureInfo.InvariantCulture));
+        Thread.Sleep(100);
     }
 
     public async Task ClickCalculateCost()
@@ -69,7 +73,7 @@ internal class WebParkingPage : BasePage
         if (string.IsNullOrEmpty(resultText))
             throw new Exception("Unable to parse duration");
 
-        var matches = new Regex("\d+").Matches(resultText);
+        var matches = new Regex("\\d+").Matches(resultText);
         var days = TimeSpan.FromDays(int.Parse(matches[0].Value));
         var hours = TimeSpan.FromHours(int.Parse(matches[1].Value));
         var minutes = TimeSpan.FromMinutes(int.Parse(matches[2].Value));
