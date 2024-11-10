@@ -1,6 +1,6 @@
 namespace Playwright;
 
-public class UITests : PageTest
+public class UITests : BaseTest
 {
     [Test]
     public async Task FormValidationTest()

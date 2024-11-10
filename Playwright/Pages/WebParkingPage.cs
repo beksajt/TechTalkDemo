@@ -30,7 +30,7 @@ internal class WebParkingPage : BasePage
         await EntryTime.ClearAsync();
         await EntryDate.FillAsync(dateTime.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
         await EntryTime.FillAsync(dateTime.ToString("HH:mm", CultureInfo.InvariantCulture));
-        Thread.Sleep(100);
+        Thread.Sleep(200);
     }
 
     public async Task SetExitDateTime(DateTime dateTime)
@@ -39,7 +39,7 @@ internal class WebParkingPage : BasePage
         await ExitTime.ClearAsync();
         await ExitDate.FillAsync(dateTime.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
         await ExitTime.FillAsync(dateTime.ToString("HH:mm", CultureInfo.InvariantCulture));
-        Thread.Sleep(100);
+        Thread.Sleep(200);
     }
 
     public async Task ClickCalculateCost()
