@@ -1,6 +1,7 @@
 export default class MainPage {
   constructor(page) {
     this.page = page;
+    this.page.route(/https:\/\/googleads/, route => route.abort());
     this.elements = {
       examplesSection: this.page.locator('#examples'),
       appsSection: this.page.locator('#apps'),

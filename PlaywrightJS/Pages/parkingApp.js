@@ -51,11 +51,13 @@ export default class ParkingApp {
   }
 
   async setEntryDateTime(entryDate) {
+    await this.elements.reservation.entryDateInput.fill('');
     await this.elements.reservation.entryDateInput.fill(entryDate.toISOString().split('T')[0]);
     await this.elements.reservation.entryTimeInput.fill(entryDate.toTimeString().split(' ')[0].substring(0, 5));
   }
 
   async setExitDateTime(exitDate) {
+    await this.elements.reservation.exitDateInput.fill('');
     await this.elements.reservation.exitDateInput.fill(exitDate.toISOString().split('T')[0]);
     await this.elements.reservation.exitTimeInput.fill(exitDate.toTimeString().split(' ')[0].substring(0, 5));
   }
